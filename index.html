@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+    <?!= include("estilos-css"); ?>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<title>SUINFO</title>
+	</head>
+	<body>
+		<header>			
+			<div class="container" id="titulo">
+				<h2>Atualização do Cadastro de Colaboradores DPEMA</h2>
+			</div>
+		</header>
+
+  <div class="outer-panel text-center rounded">
+    <div class="inner-panel rounded">
+      <div class="container">      
+        <div class="row">
+          <ul class="">
+            <li class="disabled"><a href="#!"><i class="material-icons"></i></a></li>
+            <li ></i></a></li>
+            <li ></i></a></li>
+          </ul>
+            <select id ="polo" required>
+              <optgroup label="Núcleos da grande São Luís">
+                <option disabled selected>Escolha seu polo de atendimento</option>            
+                    <option>Sala de atendimento Forúm SLZ</option>
+                    <option>Sala de atendimento CEJUSC SLZ</option>
+                    <option>Núcleo Forense SLZ</option>
+                    <option>Núcleo de Execução Penal</option>
+                    <option>Núcleo do Consumidor</option>
+                    <option>Núcleo da 2ª Instância TJMA</option>
+                    <option>Núcleo de Moradia</option>
+                    <option>Núcleo da Zona Rural</option>
+                    <option>Núcleo de Defesa da Criança e Juventude - Cajazeiras</option>
+                    <option>Núcleo Itaqui-Bacanga</option>
+                    <option>Núcleo Regional de Paço Do Lumiar</option>
+                    <option>Núcleo Regional de São José de Ribamar</option>
+                    <option>Núcleo Regional da Raposa</option>
+                  </optgroup>
+                  <optgroup label="Núcleos Regionais">
+                    <option>Núcleo Regional de Açailândia</option>
+                    <option>Núcleo Regional de Alcântara</option>
+                    <option>Núcleo Regional de Arari</option>
+                    <option>Núcleo Regional de Bacabal</option>
+                    <option>Núcleo Regional de Balsas</option>
+                    <option>Núcleo Regional de Barra Do Corda</option>
+                    <option>Núcleo Regional de Bom Jardim</option>
+                    <option>Núcleo Regional de Buriticupu</option>
+                    <option>Núcleo Regional de Carolina</option>
+                    <option>Núcleo Regional de Caxias</option>
+                    <option>Núcleo Regional de Cedral</option>
+                    <option>Núcleo Regional de Chapadinha</option>
+                    <option>Núcleo Regional de Coroatá</option>
+                    <option>Núcleo Regional de Codó</option>
+                    <option>Núcleo Regional de Coelho Neto</option>
+                    <option>Núcleo Regional de Colinas</option>
+                    <option>Núcleo Regional de Cururupu</option>
+                    <option>Núcleo Regional de Esperantinópolis</option>
+                    <option>Núcleo Regional de Governador Nunes Freire</option>
+                    <option>Núcleo Regional de Grajaú</option>
+                    <option>Núcleo Regional de Humberto De Campos</option>
+                    <option>Núcleo Regional de Icatu</option>
+                    <option>Núcleo Regional de Imperatriz</option>
+                    <option>Núcleo Regional de Itapecuru Mirim</option>
+                    <option>Núcleo Regional de Lago Da Pedra</option>
+                    <option>Núcleo Regional de Matões</option>
+                    <option>Núcleo Regional de Morros</option>
+                    <option>Núcleo Regional de Parnarama</option>
+                    <option>Núcleo Regional de Pastos Bons</option>
+                    <option>Núcleo Regional de Pedreiras</option>
+                    <option>Núcleo Regional de Penalva</option>
+                    <option>Núcleo Regional de Pinheiro</option>
+                    <option>Núcleo Regional de Presidente Dutra</option>
+                    <option>Núcleo Regional de Rosário</option>
+                    <option>Núcleo Regional de Santa Helena</option>
+                    <option>Núcleo Regional de Santa Inês</option>
+                    <option>Núcleo Regional de Santa Quitéria</option>
+                    <option>Núcleo Regional de Santa Rita</option>
+                    <option>Núcleo Regional de São João dos Patos</option>
+                    <option>Núcleo Regional de Timon</option>
+                    <option>Núcleo Regional de Vargem Grande</option>
+                    <option>Núcleo Regional de Viana</option>
+                    <option>Núcleo Regional de Zé Doca</option>
+                  </optgroup>
+                  <label>Polo/Lotação: </label>
+            </select>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text"  id="user" class="validate" required size="100" maxlength="50" placeholder="Ex: Fulano de tal da silva" >
+              <label for="name">Nome <label/>
+            </div> 
+            <div class="input-field col s12">
+              <input type="text"  id="cpf" class="validate"  maxlength="11" placeholder="Ex: 000.000.000-00" required>
+              <label>CPF <label/>
+            </div>             
+          </div>
+        
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="tel" class="validate" pattern="^\d({2})-\d{5}-\d{4}$" type="tel" maxlength="15" placeholder="Ex: (00) 0000-0000" required>
+                <label for="name">Telefone <label/>
+              </div>            
+              <div class="col s12">
+                <div class="input-field col s12">            
+                  <input type="email"  id="email" class="validate" maxlength="50" placeholder="Ex: fulanodetal@gmail.com" required>
+                  <label for="email">Digite seu e-mail pessoal válido <label/>
+                  <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>  
+              </div>  
+          <div class="tabela1">
+              
+              <table class="styled-table">
+              
+                  <thead>     
+                              
+                      <tr>               
+                          <th>Vinculos</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr class="active-row">
+                          <td>Cedido</td>
+                          <td>Estagiário</td>
+                                      
+                      </tr>
+                      <tr class="active-row">
+                          <td>Servidor</td>
+                          <td>Terceirizado</td>
+                        
+                      </tr>
+                      <!-- and so on... -->
+                  </tbody>
+              </table>              
+          </div>
+          
+          <div class="tabela">
+           
+            <table class="styled-table1">
+             
+                <thead>
+                    <tr>
+                        <th>Funções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active-row">
+                        <td>Advogado(a)</td>
+                        <td>Administrativo</td> 
+                        <td>Assessor</td>
+                        <td>Psicólogo(a)</td>  
+                                  
+                    </tr>
+                    <tr class="active-row">
+                        <td>Assistente Social</td>
+                        <td>Cadastro</td>
+                        <td>Graduação em direito</td>
+                        <td>Pós-graduação em direito</td>
+                    </tr>
+                  
+                    <!-- and so on... -->
+                </tbody>
+            </table>              
+          </div>
+              <div class="input-field col s12">   
+                <i class="material-icons prefix">contact_mail</i>
+                <input type="text"  id="vinculo" class="autocomplete" required>
+                <label for="autocomplete-input">Qual seu vinculo com a instituição? <label/>              
+              </div> 
+      
+              <div class="input-field col s12">                
+                <i class="material-icons prefix">contact_mail</i>
+                <input type="text"  id="funcao" class="autocomplete" required>
+                <label for="autocomplete-input">Qual sua função ? <label/>              
+              </div> 
+        </div>
+         <!--div row -->
+       
+        
+        
+           
+          <!-- Div CheckBox -->
+          <!-- Autocomplete -->
+          <!-- Mostrar sistemas e Digitar sistema -->
+     <p class="flow-text">Listas de sistemas DPEMA</p>
+      <table class="styled-table">
+        <thead>
+          <tr>
+              <th>Listas de sistemas DPEMA</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>GEMAP</td>
+            <td>GUARÁ</td>
+            <td>VALIDOC</td>
+            
+          </tr>
+          <tr>
+            <td>5TI</td>
+            <td>DEF_FLIX</td>    
+            <td>SAGAP</td>
+          </tr>
+          <tr>
+            <td>AGENDAMENTO</td>
+            <td>SISCON</td>
+            <td>EVOTO</td>
+           
+          </tr>
+             <tr>
+            <td>SAN</td>
+            <td>EVOTO</td>
+            <td>SIAPD</td>
+           
+          </tr>
+        </tbody>
+      </table>
+          <!-- Default with no input (automatically generated)  -->
+          
+          <div class="input-field col s12">                
+                <i class="material-icons prefix">contact_mail</i>
+                <input type="text"  id="sistemas" placeholder="Digite separando por vírgula Ex: GUARA, GEMAP" required>
+                <label for="autocomplete-input">Digite os sistemas que você utiliza <label/>              
+          </div> 
+      
+              
+                          
+             
+            <!-- Autocomplete -->
+       
+
+              <div class="row2">
+                <button id="adicionar" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Adicionar Usuário</button>   
+              </div>
+         
+      </div> <!--div container --> 
+      <p class="rodap">Todos os direitos reservados</p>
+      <p class="rodap">Contato: (98) 98824-9561</p>
+    </div> <!--div inner-panel -->  
+  </div> <!--div outer-panel -->
+     
+    
+        <div class="fixed-action-btn horizontal click-to-toggle">
+          <a class="btn-floating btn-large red">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+          </ul>
+        </div>
+        
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+    <?!= include("scripts-js"); ?>
+	</body>
+</html>
