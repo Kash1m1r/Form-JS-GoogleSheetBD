@@ -1,0 +1,201 @@
+<script>
+  
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+
+   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.autocomplete');
+    var instances = M.Autocomplete.init(elems, options);
+  });
+/*
+    var chipEl = document.getElementById('chip');
+    var chip = M.Chips.init(chipEl, options);
+ */
+   
+
+    
+  
+  
+/*
+ 
+  $(document).ready(function(){
+    $('.chips-autocomplete').chips({
+      autocompleteOptions: {
+        data:{
+          'GUARA': null,
+          'Microsoft': null,
+          'Google': null
+        },
+        limit: Infinity,
+        minLength: 1
+      }
+    });
+  });
+*/
+  $(document).ready(function(){
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Advogado(a)": null,
+				"Administrativo": null,
+				"Assessor": null,
+				"Assistente Social": null,
+				"Cadastro": null,
+				"Cedido": null,
+				"Estagiário": null,
+				"Graduação em direito": null,
+				"Psicólogo(a)": null,
+				"Pós-graduação em direito": null,
+				"Servidor": null,
+				"Terceirizado": null,
+			
+      },
+      
+    });
+  });
+
+
+ 
+
+  //função cpf
+    var cpf = document.querySelector("#cpf");
+
+    cpf.addEventListener("blur", function(){
+
+      cpf.value = cpf.value.match(/.{2,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
+    });
+
+
+  //função telefone
+   function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+    }
+    function execmascara(){
+        v_obj.value=v_fun(v_obj.value)
+    }
+    function mtel(v){
+        v=v.replace(/\D/g,"");             //Remove tudo o que não é dígito
+        v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+        v=v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+        return v;
+    }
+    function id( el ){
+      return document.getElementById( el );
+    }
+    window.onload = function(){
+      id('tel').onkeyup = function(){
+        mascara( this, mtel );
+      }
+    }
+
+
+  document.getElementById("adicionar").addEventListener("click", buttonAction);
+  function validaCheck(){
+    var checks = document.getElementByClassName("checks");
+    var str = '' ;
+    for (i = 0; i<3; i++){
+      if (checks[i].checked === true){
+        str += checks[i].value + "";
+      }
+    }
+    alert(str);
+
+  }
+  function buttonAction(){
+    
+    var validacao = {
+      
+      user: "Digite um nome válido",
+      cpf: "Digite um CPF válido",
+      email: "Digite um E-mail válido",
+      tel: "Digite um telefone válido",
+      vinculo: "Digite seu vinculo",
+      funcao:"Digite sua função",
+
+      
+  
+    };
+
+    var idKeys = Object.keys(validacao);
+    var allValid = true;
+    idKeys.forEach(function(id){
+      var isValid = verificaValidacao(id, validacao[id]);
+      if(!isValid){
+        allValid = false;
+      }
+    });
+    if(allValid){
+        M.toast({html: 'Usuário criado com sucesso'});
+        adcionaCliente();
+
+      }
+      
+  }
+
+
+  function verificaValidacao(id, mensagem){
+    var validaPolo = document.getElementById(id).checkValidity();
+    if(!validaPolo){
+      M.toast({html: mensagem });
+      return false;
+    }
+    return true;
+  }
+
+  function adcionaCliente(){
+    
+    var infoUsuario = {};
+
+
+    infoUsuario.polo = document.getElementById("polo").value;
+    infoUsuario.vinculo = document.getElementById("vinculo").value;
+    infoUsuario.funcao = document.getElementById("funcao").value;
+    infoUsuario.user = document.getElementById("user").value;
+    infoUsuario.cpf = document.getElementById("cpf").value;
+    infoUsuario.email = document.getElementById("email").value;
+    infoUsuario.tel = document.getElementById("tel").value; 
+    infoUsuario.sistemas = document.getElementById("sistemas").value;
+    //var chipsData = chip.chipsData;
+   // infoUsuario.chip = chipsData.map(function(c){ return c.tag; });
+  
+   
+  
+
+    
+    google.script.run.usarClique(infoUsuario);
+
+    
+   
+    document.getElementById("user").value = "";
+    document.getElementById("cpf").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("tel").value = "";  
+    document.getElementById("vinculo").value = "";
+    document.getElementById("funcao").value = "";
+    document.getElementById("sistemas").value = "";
+    M.updateTextFields();
+    
+   
+  
+    
+    
+   
+    //document.getElementById("siscon").checked = true;
+
+
+
+
+   //var myVinculo = document.getElementById("vinculo");
+   // myVinculo.selectedIndex = 0
+   // M.FormSelect.init(myVinculo);
+
+   // var myFuncao = document.getElementById("funcao");
+   // myFuncao.selectedIndex = 0
+   // M.FormSelect.init(myFuncao);
+
+  }
+</script>
